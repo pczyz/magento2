@@ -68,12 +68,12 @@ class CouponManagement implements CouponManagementInterface
             throw new CouldNotSaveException(__('The coupon code couldn\'t be applied: ' .$e->getMessage()), $e);
         } catch (\Exception $e) {
             throw new CouldNotSaveException(
-                __("The coupon code couldn't be applied. Verify the coupon code and try again."),
+                __("Podany kod promocyjny jest nieprawidłowy. Zweryfikuj poprawność kodu i spróbuj jeszcz raz."),
                 $e
             );
         }
         if ($quote->getCouponCode() != $couponCode) {
-            throw new NoSuchEntityException(__("The coupon code isn't valid. Verify the code and try again."));
+            throw new NoSuchEntityException(__("Podany kod promocyjny jest nieprawidłowy. Zweryfikuj poprawność kodu i spróbuj jeszcz raz."));
         }
         return true;
     }
@@ -94,12 +94,12 @@ class CouponManagement implements CouponManagementInterface
             $this->quoteRepository->save($quote->collectTotals());
         } catch (\Exception $e) {
             throw new CouldNotDeleteException(
-                __("The coupon code couldn't be deleted. Verify the coupon code and try again.")
+                __("Podany kod promocyjny jest nieprawidłowy. Zweryfikuj poprawność kodu i spróbuj jeszcz raz.")
             );
         }
         if ($quote->getCouponCode() != '') {
             throw new CouldNotDeleteException(
-                __("The coupon code couldn't be deleted. Verify the coupon code and try again.")
+                __("Podany kod promocyjny jest nieprawidłowy. Zweryfikuj poprawność kodu i spróbuj jeszcz raz.")
             );
         }
         return true;
