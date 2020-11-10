@@ -68,3 +68,4 @@ Carts,Carts
 "Invalid state change requested","Invalid state change requested"
 "Validated Country Code","Validated Country Code"
 "Validated Vat Number","Validated Vat Number"
+"The coupon code isn't valid. Verify the code and try again.","The coupon code isn't valid. Verify the code and try again."
